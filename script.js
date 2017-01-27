@@ -1,0 +1,1 @@
+var listeimg = ['ane.jpg','chat.jpg','chien.jpg','lama.jpg','lapins.jpg','lionne.jpg','ours.jpg'];

@@ -3,7 +3,7 @@ var paires = 0;
 var choixun;
 var choixdeux;
 var dos = "img/dos.jpg";
-var tab = ['img/chat.jpg','img/chien.jpg','img/ane.jpg','img/lionne.jpg','img/lama.jpg','img/lapins.jpg','img/ours.jpg','img/chat.jpg','img/chien.jpg','img/ane.jpg','img/lionne.jpg','img/lama.jpg','img/lapins.jpg','img/ours.jpg'];
+var tab = ['img/exodia.jpg','img/celte.jpg','img/magicien.jpg','img/crane.jpg','img/dragonblanc.jpg','img/dragonrouge.jpg','img/obelisk.jpg','img/exodia.jpg','img/celte.jpg','img/magicien.jpg','img/crane.jpg','img/dragonblanc.jpg','img/dragonrouge.jpg','img/obelisk.jpg'];
 // variable utilises
 
 function afficherImages(){
@@ -54,7 +54,6 @@ function verif() { // Vérifie si une paire a été faite
 		document.images[choixun].style.pointerEvents = 'none';
 		document.images[choixdeux].style.opacity = '0.3';
 	} else {
-		alert('Les 2 images sont différentes...');
 		document.images[choixun].src = dos;
 		document.images[choixun].style.pointerEvents = 'auto';
 		document.images[choixdeux].src = dos;
@@ -63,6 +62,6 @@ function verif() { // Vérifie si une paire a été faite
 	if (paires==7) {
 		document.getElementById("mosaique").style.display = 'block';
 		document.getElementById("mosaique").style.flexDirection = 'column';
-		document.getElementById('mosaique').innerHTML = '<h1> Vous avez gagné !</h1><br /><input type="button" class="restart" value="Recommencer" onClick="window.location.reload()">';
+		document.getElementById('mosaique').innerHTML = '<h1> Tu as gagné !</h1><br /><div id="bouton"><input type="button" class="restart" value="Reviens Duelliste" onClick="window.location.reload()"></div> <img id="fin" src = "img/yugi.jpg">';
 	}
 }

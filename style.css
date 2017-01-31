@@ -1,5 +1,6 @@
 body{
 	background-color: #5E6BE8;
+	margin: 0;
 }
 h2{
 	text-align: center;
@@ -20,4 +21,8 @@ p{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+#titre{
+	background-image: url("img/banniere.jpg");
+	height: 200px;
 }

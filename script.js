@@ -8,7 +8,7 @@ var tab = ['img/chat.jpg','img/chien.jpg','img/ane.jpg','img/lionne.jpg','img/la
 
 function afficherImages(){
 	for(i=0;i<=tab.length-1;i++){
-		document.getElementById('mosaique').innerHTML +='<img src="img/dos.jpg" onclick="choisir('+i+')" draggable="false">'
+		document.getElementById('mosaique').innerHTML +='<img src="img/dos.jpg" class="photo" onclick="choisir('+i+')" draggable="false">'
 	}
 }
 afficherImages();
@@ -49,15 +49,14 @@ function verif() { // Vérifie si une paire a été faite
 	if (tab[choixdeux] == tab[choixun]) {
 		paires++;
 		document.getElementById("paires").innerHTML = paires;
-		document.images[choixun].removeAttribute('onclick');
+		document.images[choixun].style.pointerEvents = 'none';
 		document.images[choixun].style.opacity = '0.3';
-		document.images[choixun].style.cursor = 'not-allowed';
-		document.images[choixdeux].removeAttribute('onclick');
+		document.images[choixun].style.pointerEvents = 'none';
 		document.images[choixdeux].style.opacity = '0.3';
-		document.images[choixdeux].style.cursor = 'not-allowed';
 	} else {
 		alert('Les 2 images sont différentes...');
 		document.images[choixun].src = dos;
+		document.images[choixun].style.pointerEvents = 'auto';
 		document.images[choixdeux].src = dos;
 		return;
 	}

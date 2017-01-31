@@ -6,6 +6,13 @@ var dos = "img/dos.jpg";
 var tab = ['img/chat.jpg','img/chien.jpg','img/ane.jpg','img/lionne.jpg','img/lama.jpg','img/lapins.jpg','img/ours.jpg','img/chat.jpg','img/chien.jpg','img/ane.jpg','img/lionne.jpg','img/lama.jpg','img/lapins.jpg','img/ours.jpg'];
 // variable utilises
 
+function afficherImages(){
+	for(i=0;i<=tab.length-1;i++){
+		document.getElementById('mosaique').innerHTML +='<img src="img/dos.jpg" onclick="choisir('+i+')" draggable="false">'
+	}
+}
+afficherImages();
+
 function random(tab){ //fonction qui permet de melanger les images
     var j, x, y;
     for(y = tab.length; y; y--) { //pour i=longueur totale du tableau, i toujours vrai(sup a zero), on decremente i(on lui enleve 1).
@@ -25,6 +32,7 @@ function choisir(carte){
 	if(clique == 0){
 		choixun = carte;
 		document.images[carte].src = tab[carte];
+		document.images[choixun].style.pointerEvents = 'none';
 		clique = 1;
 	}else{
 		clique = 2;

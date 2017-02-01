@@ -49,7 +49,6 @@ function choisir(carte){
 }
 
 function verif() { // Vérifie si une paire a été faite
-	clearInterval(timer);
 	clique = 0;
 	if (tab[choixdeux] == tab[choixun]) {
 		paires++;

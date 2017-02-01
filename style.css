@@ -1,11 +1,12 @@
 body{
 	background-image: url('img/fond.jpg');
+	background-attachment:fixed;
+	background-repeat:repeat;
 	margin: 0;
 }
-h2{
-	text-align: center;
-}
+	
 p{
+	text-decoration: bold;
 	text-align: center;
 }
 .photo{

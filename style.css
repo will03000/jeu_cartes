@@ -1,5 +1,5 @@
 body{
-	background-color: #5E6BE8;
+	background-image: url('img/fond.jpg');
 	margin: 0;
 }
 h2{
@@ -8,8 +8,6 @@ h2{
 p{
 	text-align: center;
 }
-
-
 .photo{
 	width: 150px;
 	height: 200px;
@@ -33,3 +31,9 @@ p{
 #bouton{
 	display: flex;
 }
+#chronotime {
+	display: flex;
+	justify-content: center;
+	color: red;
+}
+

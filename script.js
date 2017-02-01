@@ -2,6 +2,7 @@ var clique = 0;
 var paires = 0;
 var choixun;
 var choixdeux;
+var norepeat = true;//empeche le chrono de se repeter
 var dos = "img/dos.jpg";
 var tab = ['img/exodia.jpg','img/celte.jpg','img/magicien.jpg','img/crane.jpg','img/dragonblanc.jpg','img/dragonrouge.jpg','img/obelisk.jpg','img/exodia.jpg','img/celte.jpg','img/magicien.jpg','img/crane.jpg','img/dragonblanc.jpg','img/dragonrouge.jpg','img/obelisk.jpg'];
 // variable utilises
@@ -26,6 +27,10 @@ random(tab);
 
 
 function choisir(carte){
+	if (norepeat == true){
+		timerID = setInterval("chrono()", 1000); 
+		norepeat = false;
+	}
 	if (clique == 2) {
 		return;
 	}
@@ -38,7 +43,7 @@ function choisir(carte){
 		clique = 2;
 		choixdeux = carte;
 		document.images[carte].src = tab[carte];
-		timer = setInterval("verif()",500);
+		timer = setTimeout("verif()",500);
 	}
 	
 }
@@ -60,8 +65,29 @@ function verif() { // Vérifie si une paire a été faite
 		return;
 	}
 	if (paires==7) {
+		clearInterval(timerID);
 		document.getElementById("mosaique").style.display = 'block';
 		document.getElementById("mosaique").style.flexDirection = 'column';
-		document.getElementById('mosaique').innerHTML = '<h1> Tu as gagné !</h1><br /><div id="bouton"><input type="button" class="restart" value="Reviens Duelliste" onClick="window.location.reload()"></div> <img id="fin" src = "img/yugi.jpg">';
+		document.getElementById('mosaique').innerHTML = '<h1> Tu as gagné !</h1><br /><div id="bouton"><input id = "btnr" type="button" class="restart" value="Reviens Duelliste" onClick="window.location.reload()"></div> <img id="fin" src = "img/yugi.jpg">';
 	}
 }
+var timerID = 0;
+var sec = 0;
+var min = 0; 
+
+function chrono(){ 
+	if(sec<59){
+		sec++;
+		if(sec<10){
+			sec = "0" +sec;
+		}
+
+	}
+	else if(sec=59){
+		min++;
+		sec = "0" + 0;
+	}
+	document.getElementById("chronotime").innerHTML = min + ":" + sec +"";
+
+} 
+
